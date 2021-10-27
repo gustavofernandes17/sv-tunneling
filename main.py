@@ -48,6 +48,8 @@ def main():
 
     url_change_status = requests.post(CONFIG_SERVER, json=change_url_payload).status_code
     # altera a url de streaming
+
+    # mantem o loop enquanto a url não for corretamente alterada
     while url_change_status != 200: 
 
         code = requests.post(CONFIG_SERVER, change_url_payload).status_code
